@@ -20,19 +20,27 @@
         $check_page = $row['PCategory']; //to specify the category
         //if(  $check_page ==='store'){
 
-            echo "<div class='den'>";
-            echo "
-            <div class='featured-container'>
-                <article class='sneaker'>
-                    <img src='./admin/product/$row[Image]' class='sneaker__img' />
-                    <span class='sneaker__name'>$row[PName]</span>
-                    <span class='sneaker__preci'>₦$row[PPrice]</span>
-                    <span class='sneaker__preci2'>₦$row[PPrice2]</span>
-                    <a href='#' class='button-light'>Add to Cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
+            echo "<div class='sam'>";
+        echo "
+        <div class='featured-container'>
+            <article class='sneaker'>
+                <img src='./admin/product/$row[Image]' class='sneaker__img' />
+                <span class='sneaker__name'>$row[PName]</span>
+                <span class='sneaker__preci'>₦$row[PPrice]</span>
+                <span class='sneaker__preci2'>₦$row[PPrice2]</span>
+                
+                <form method='post' action='insertbag.php' onsubmit='showSuccessMessage(); return true;'> 
+                <input type='hidden' name='PName' value='$row[PName]' />
+                <input type='hidden' name='PPrice' value='$row[PPrice]' />
+                <input type='hidden' name='PQuantity' value='1' />
+                <button type='submit' class='button-light no-border' name='addCart'>
+                    Add to Bag <i class='bx bx-right-arrow-alt button-icon'></i>
+                </button>
+            </form>
                 </article>
-            </div>  "  ;
-            echo "</div";
-        }
+        </div>  "  ;
+        echo "</div";
+    }
     
     
 

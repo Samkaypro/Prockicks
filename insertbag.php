@@ -17,7 +17,7 @@ if(isset($_POST['addCart'])){
 }
 
 
-//this function is to remove a selected item 
+//this function is to remove a selected item
 if(isset($_POST['remove'])){
     $item_to_remove = $_POST['item'];
     foreach($_SESSION['cart'] as $key => $value){

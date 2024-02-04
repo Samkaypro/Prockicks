@@ -340,7 +340,7 @@ img {
   height: 100%; 
 }
 
-.den {
+.sam {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem; 
@@ -354,7 +354,7 @@ img {
     margin-bottom: 1rem; 
   }
 
-  .den {
+  .sam {
     padding: 0; 
   }
 }
