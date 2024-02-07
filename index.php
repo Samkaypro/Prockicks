@@ -9,6 +9,7 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 <!-- ===== BOX ICONS ===== -->
 <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
@@ -24,22 +25,23 @@
         <!--===== HOME =====-->
 
         <section class="home" id="home">
-            <div class="home__container bd-grid">
-                <div class="home__sneaker">
-                    <div class="home__shape"></div>
-                    <img src="./assets/images/imghome.png" alt="" class="home__img" />
-                </div>
+    <div class="home__container bd-grid">
+        <div class="home__sneaker animate__animated animate__fadeInRight">
+            <div class="home__shape"></div>
+            <img src="./assets/images/imghome.png" alt="" class="home__img" />
+        </div>
 
-                <div class="home__data">
-                    <span class="home__new">New In</span>
-                    <h1 class="home__title">YEEZY BOOST <br />SPLY - 350</h1>
-                    <p class="home__description">
-                        Explore the new collecttions of sneakers
-                    </p>
-                    <a href="./views/store.php" class="button">Explore</a>
-                </div>
-            </div>
-        </section>
+        <div class="home__data ">
+            <span class="home__new animate__animated animate__fadeInLeft">New In</span>
+            <h1 class="home__title  animate__animated animate__fadeInLeft animate__delay-1.5s">YEEZY BOOST <br />SPLY - 350</h1>
+            <p class="home__description animate__animated animate__fadeInLeft animate__delay-600ms">
+                Explore the new collections of sneakers
+            </p>
+            <a href="./views/store.php" class="button animate__animated animate__fadeInLeft animate__delay-1s">Explore</a>
+        </div>
+    </div>
+</section>
+
  <!--===== FEATURED =====-->
  <section class="featured section" id="featured">
             <h2 class="section-title">FEATURED</h2>
@@ -53,7 +55,7 @@
         echo "<div class='sam'>";
         echo "
         <div class='featured-container'>
-            <article class='sneaker'>
+            <article class='sneaker animate__animated animate__fadeInUp animate__delay-500ms'>
                 <img src='./admin/product/$row[Image]' class='sneaker__img' />
                 <span class='sneaker__name'>$row[PName]</span>
                 <span class='sneaker__preci'>₦$row[PPrice]</span>
