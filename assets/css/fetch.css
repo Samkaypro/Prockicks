@@ -1,0 +1,146 @@
+.card {
+    max-width: 600px;
+    margin: 0 auto;
+    
+    opacity: 1; /* opacity-100 */
+    backdrop-filter: blur(0.5px); /* backdrop-blur-[.5px] */
+    padding: 20px;
+   
+}
+
+.card-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-product-container {
+    display: grid;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.product-container {
+    display: grid;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.img-container {
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-name {
+    margin-right: 10px;
+    font-size: medium;
+}
+
+.keys {
+    flex-grow: 1;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
+}
+
+.big-price {
+    margin-top: 0%;
+    text-decoration: line-through;
+    margin-right: 8px;
+    color: rgb(236, 65, 65);
+    font-size: x-small;
+  }
+
+  .pname {
+    font-weight: 700;
+    font-size: larger;
+  }
+
+.quantity {
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+}
+
+.keys a {
+    text-decoration: none;
+    color: #000;
+    margin: 10px;
+}
+
+.border {
+    border: 1px solid #ccc;
+}
+
+.checkout-btn {
+    background-color: #121212;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.back-to-shop {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.your-bag h4 {
+    margin: 0;
+}
+
+/* Media Queries for Mobile Responsive Design */
+@media only screen and (max-width: 600px) {
+    
+
+    .main-product-container {
+        display: grid;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+    }
+    
+    .img-container {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .keys {
+        flex-direction: column;
+        align-items:center;
+    }
+    .keys a {
+        margin: 0;
+    }
+    .product-name {
+        margin-left: 0px;
+        
+    }
+
+   
+    
+    .checkout-btn {
+        width: 100%;
+    }
+}
