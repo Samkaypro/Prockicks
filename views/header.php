@@ -57,7 +57,7 @@
             </div>
 
             <div class="nav__shop">
-                <a href="./bag.php"><i class="bx bx-shopping-bag"></i></a>
+                <a href="../bag.php"><i class="bx bx-shopping-bag"></i></a>
             </div>
         </nav>
     </header>

@@ -8,7 +8,7 @@
   <title>Prockics | Bag</title>
 
 
-    <link rel="stylesheet" href="assets/css/bag.css" />
+    <link rel="stylesheet" href="assets/css/bagf.css" />
    <!-- Font Awesome CSS -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -20,23 +20,24 @@
   
 
 <div class="card">
-    <div class="card-row">
+    <div class="row">
         <div class="cart">
         <?php
 $subtotal = 0;
-$ptotal = 0; // Initialize $ptotal here
+$ptotal = 0; // Initialize $ptotal here 
 
 if (isset($_SESSION['cart'])) {
     echo "
     <div class='title'>
-        <div class='title-row'>
-            <div class='your-bag'><h4><b>Your Bag</b></h4></div>
+        <div class='row'>
+            <div class='col'><h4><b>Your Bag</b></h4></div>
+        
         </div>
     </div>";
 
     foreach ($_SESSION['cart'] as $key => $value) {
         // Check if 'productImage' and 'productQuantity' keys exist
-        $productImage = isset($value['productImage']) ? $value['productImage'] : '';
+        $productImage = isset($value['productImage']) ? $value['productImage']: '';
         $productName = isset($value['productName']) ? $value['productName'] : '';
         $productQuantity = isset($value['productQuantity']) ? $value['productQuantity'] : 1;
         $productPrice = isset($value['productPrice']) ? $value['productPrice'] : 0;
@@ -46,21 +47,20 @@ if (isset($_SESSION['cart'])) {
         $subtotal += $productTotal; // Update $subtotal
 
         echo "
-    <div class='main-product-container'>
-        <div class='product-container'>
+    <div class='card'>
+        <div class='row main align-items-center'>
             <div class='img-container'>
-                <img class='img' src='./admin/product/{$productImage}'>
+                <img class='img' src='./admin/product/{$productImage}' >
             </div>
             <div class='product-name'>
-               
-                <div class='pname'>{$productName}</div>
+                <div class='name'>{$productName}</div>
             </div>
             <div class='keys'>
                 <a href='#' class='minus-btn' data-key='{$key}'>-</a>
                 <a href='#' class='border quantity' data-key='{$key}'>{$productQuantity}</a>
                 <a href='#' class='plus-btn' data-key='{$key}'>+</a>
             </div>
-            <div class='upprice' data-price='{$productPrice}'>
+            <div class='price' data-price='{$productPrice}'>
                 <span class='total-price' data-key='{$key}'> &#8358; {$productTotal}</span>
             </div>
         </div>
@@ -70,18 +70,17 @@ if (isset($_SESSION['cart'])) {
 ?>
 
 
-<div class="back-to-shop">
-    <a href="./index.php">
-        &leftarrow; <span class="text-muted">Back to Home</span>
-    </a>
-    </div>
+        <div class="back-to-shop">
+            <a href="./index.php">
+                &leftarrow; <span class="text-muted">Back to Home</span>
+            </a>
+        </div>  
+        </div>
             <a href="">
-              <button class="checkout-btn">CHECKOUT</button>
+              <button class="btn">CHECKOUT</button>
             </a>
 
         </div>
-</div>
-   
     </div>
 </div>
 

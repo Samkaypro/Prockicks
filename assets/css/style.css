@@ -139,6 +139,14 @@ img {
   left: 0;
   z-index: var(--z-fixed);
   background-color: var(--dark-color-lighten);
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .l-header {
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 /*===== NAV =====*/
@@ -154,7 +162,7 @@ img {
     position: fixed;
     top: var(--header-height);
     left: -100%;
-    width: 70%;
+    width: 50%;
     height: 100vh;
     padding: 2rem;
     background-color: var(--white-color);

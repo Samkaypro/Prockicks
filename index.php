@@ -143,7 +143,7 @@
             <h2 class='section-title'>LUXURY</h2>
             <?php
     include './database/config.php';
-    $Record = mysqli_query($con, "SELECT * FROM product_table WHERE PCategory='luxury' ORDER BY RAND() LIMIT 3");
+    $Record = mysqli_query($con, "SELECT * FROM product_table WHERE PCategory='luxury' ORDER BY RAND() LIMIT 6");
 
     while($row = mysqli_fetch_array($Record)){
 
@@ -172,7 +172,7 @@
 
 </section>
 
-<section class="newsletter section">
+<!--<section class="newsletter section">
             <div class="newsletter__container bd-grid">
                 <div>
                     <h3 class="newsletter__title">Subcribe And Get <br> 10% OFF</h3>
@@ -184,7 +184,7 @@
                     <a href="#" class="button" value="submit">Subcribe</a>
                 </form>
             </div>
-        </section>
+        </section>-->
     </main>
 
 <?php
