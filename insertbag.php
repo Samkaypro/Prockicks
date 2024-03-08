@@ -5,12 +5,14 @@ if(isset($_POST['addCart'])){
     $product_name = $_POST['PName'];
     $product_price = $_POST['PPrice'];
     $product_image = $_POST['Image'];
+    $product_price2 = $_POST['PPrice2'];
     
 
     $_SESSION['cart'][] = array(
         'productName' => $product_name,
         'productPrice' => $product_price,
         'productImage' => $product_image,
+        'productPrice2' => $product_price2,
     );
 
     header("location:index.php");

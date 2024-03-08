@@ -62,8 +62,10 @@
                 <span class='sneaker__preci2'>₦$row[PPrice2]</span>
                 
                 <form method='post' action='insertbag.php' onsubmit='showSuccessMessage(); return true;'> 
+                <input type='hidden' name='Image' value='$row[Image]' />
                 <input type='hidden' name='PName' value='$row[PName]' />
                 <input type='hidden' name='PPrice' value='$row[PPrice]' />
+                <input type='hidden' name='PPrice2' value='$row[PPrice2]' />
                 <input type='hidden' name='PQuantity' value='1' />
                 <button type='submit' class='button-light no-border' name='addCart'>
                     Add to Bag <i class='bx bx-right-arrow-alt button-icon'></i>

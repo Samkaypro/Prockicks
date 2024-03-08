@@ -13,10 +13,10 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <?php
-  include 'header.php';
+    session_start();
   ?>
 </head>
-<body style="padding-top: 100px">
+<body >
   
 
 <div class="card">
@@ -40,6 +40,7 @@ if (isset($_SESSION['cart'])) {
         $productName = isset($value['productName']) ? $value['productName'] : '';
         $productQuantity = isset($value['productQuantity']) ? $value['productQuantity'] : 1;
         $productPrice = isset($value['productPrice']) ? $value['productPrice'] : 0;
+        $productPrice2 = isset($value['productPrice2']) ? $value['productPrice2'] : 0;
 
         $ptotal += intval($productQuantity); // Update $ptotal
         $productTotal = intval($productPrice) * intval($productQuantity); // Calculate product total
@@ -53,15 +54,18 @@ if (isset($_SESSION['cart'])) {
             </div>
             <div class='product-name'>
                
-                <div class='pname'>{$productName}</div>
+                
             </div>
             <div class='keys'>
-                <a href='#' class='minus-btn' data-key='{$key}'>-</a>
-                <a href='#' class='border quantity' data-key='{$key}'>{$productQuantity}</a>
-                <a href='#' class='plus-btn' data-key='{$key}'>+</a>
+            <div class='pname'>{$productName}</div>
             </div>
-            <div class='upprice' data-price='{$productPrice}'>
-                <span class='total-price' data-key='{$key}'> &#8358; {$productTotal}</span>
+            <div class='price-container'>
+           
+            <div class='row upprice' data-price='{$productPrice}'>
+                
+                <span class='row total-price' data-key='{$key}'> &#8358; {$productTotal}</span>
+            </div>
+            <div class='big-price'>  &#8358; {$productPrice2}</div>
             </div>
         </div>
     </div>";
@@ -75,7 +79,7 @@ if (isset($_SESSION['cart'])) {
         &leftarrow; <span class="text-muted">Back to Home</span>
     </a>
     </div>
-            <a href="">
+            <a href="checkout.php">
               <button class="checkout-btn">CHECKOUT</button>
             </a>
 
@@ -84,81 +88,6 @@ if (isset($_SESSION['cart'])) {
    
     </div>
 </div>
-
-
-
-
-        
-
-
-        <script type="text/javascript">
-    $(document).ready(function () {
-        // Function to update subtotal
-        function updateSubtotal() {
-            var subtotal = 0;
-            // Iterate over each product and update subtotal
-            $('.total-price').each(function () {
-                subtotal += parseFloat($(this).text().replace(/[^\d.]/g, ''));
-            });
-            // Update the displayed subtotal
-            $('.subtotal').text('₦ ' + subtotal);
-        }
-
-        // Event handler for plus button
-        $(document).on('click', '.plus-btn', function (e) {
-            e.preventDefault();
-            var $quantityElement = $(this).siblings('.quantity');
-            var $totalPriceElement = $(this).closest('.row').find('.total-price');
-            var $productPriceElement = $(this).closest('.row').find('.upprice');
-
-            var quantity = parseInt($quantityElement.text());
-            var price = parseFloat($productPriceElement.data('price'));
-
-            // Increment quantity and update total price
-            quantity++;
-            $quantityElement.text(quantity);
-            var totalPrice = price * quantity;
-            $totalPriceElement.text('₦ ' + totalPrice);
-
-            // Update displayed product price
-            $productPriceElement.data('price', price); // Update the data-price attribute
-            $productPriceElement.text('₦ ' + totalPrice);
-
-            // Update the subtotal
-            updateSubtotal();
-        });
-
-        // Event handler for minus button
-        $(document).on('click', '.minus-btn', function (e) {
-            e.preventDefault();
-            var $quantityElement = $(this).siblings('.quantity');
-            var $totalPriceElement = $(this).closest('.row').find('.total-price');
-            var $productPriceElement = $(this).closest('.row').find('.upprice');
-
-            var quantity = parseInt($quantityElement.text());
-            var price = parseFloat($productPriceElement.data('price'));
-
-            // Ensure quantity is greater than 1 before decrementing
-            if (quantity > 1) {
-                // Decrement quantity and update total price
-                quantity--;
-                $quantityElement.text(quantity);
-                var totalPrice = price * quantity;
-                $totalPriceElement.text('₦ ' + totalPrice);
-
-                // Update displayed product price
-                $productPriceElement.data('price', price); // Update the data-price attribute
-                $productPriceElement.text('₦ ' + totalPrice);
-
-                // Update the subtotal
-                updateSubtotal();
-            }
-        });
-    });
-</script>
-
-
-
 
 
 </body>
