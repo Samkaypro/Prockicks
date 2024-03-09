@@ -53,6 +53,7 @@
     while($row = mysqli_fetch_array($Record)){
         
         echo "<div class='sam'>";
+
         echo "
         <div class='featured-container'>
             <article class='sneaker animate__animated animate__fadeInUp animate__delay-500ms'>
@@ -73,6 +74,7 @@
             </form>
                 </article>
         </div>  "  ;
+        
         echo "</div";
     }
         

@@ -14,7 +14,7 @@
 }
 
 .main-product-container {
-    display: grid;
+    display: flex;
     margin-bottom: 10px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
