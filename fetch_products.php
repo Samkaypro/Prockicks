@@ -14,7 +14,7 @@
         <div class="cart">
             <div class='title'>
                 <div class='title-row'>
-                    <div class='your-bag'><h4><b>Products 121</b></h4></div>
+                    <div class='your-bag'><h4><b>Products</b></h4></div>
                 </div>
             </div>
 
