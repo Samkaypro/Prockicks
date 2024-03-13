@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetched Products</title>
-    <!-- Include your bag.css file or the necessary CSS styles here -->
+   
     <link rel="stylesheet" href="assets/css/fetch.css" />
 </head>
 <body>

@@ -6,7 +6,6 @@ if(isset($_POST['addCart'])){
     $product_price = $_POST['PPrice'];
     $product_image = $_POST['Image'];
     $product_price2 = $_POST['PPrice2'];
-    
 
     $_SESSION['cart'][] = array(
         'productName' => $product_name,
